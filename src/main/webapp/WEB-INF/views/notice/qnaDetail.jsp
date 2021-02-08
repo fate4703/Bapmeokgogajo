@@ -1,0 +1,242 @@
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Gugi&display=swap" rel="stylesheet">
+<title>밥먹고가조 QNA</title>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script> -->
+<script src="<%= request.getContextPath() %>/resources/js/jquery-3.5.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+<style>
+  
+  	/*사이브 메뉴바 높이*/
+	#sideBar{ margin-top:  -650px; text-align: center; color: white;
+       width: 200px;  height: 300px; background: white;}
+    
+    /*테이블관련*/   
+	table{ width: 800px; font-family: 'Gugi'; }
+	#qnaTable {text-align: left;  margin: auto; width: 800px;  margin-top: 45px; }
+	#qnaTable th{border-bottom: 3px solid #1D3557;}
+	#qnaTable td{border-bottom: 1px solid #1D3557;}
+	#content_text {display: block; margin-right: auto; width: 800px;
+		height: 250px; resize: none; outline: none; border: none;  font-family: 'Gugi'; } 
+	
+	#text{
+		border: none;
+		outline-style: none;
+	}
+	
+	#rContent{
+		margin-top: 8px;
+		resize: none; 
+	}
+	
+	#cContents{
+		border-style: none;
+		outline-style: none;
+		border: none;
+		resize: none; 
+	}
+	
+	#writer{
+		outline-style: none;
+		border: none;
+		background: white !important;
+	}
+	
+	.btn1{ width: 100px; height: 30px; border: none; border-radius: 50px;  background: #F42B03; color:white; margin-left: 700px; margin-top: 40px;} 
+	.btn2{ width: 100px; height: 30px; border: none; border-radius: 50px;  background: #F42B03; color:white; margin-left: 580px; margin-top: 40px;}
+	.btn3{ width: 100px; height: 30px;border: none; border-radius: 50px;  background: #F42B03; color:white; float: right; margin-top: 96px;} 
+	
+	textarea{
+		font-family: 'Gugi' !important;
+	}
+	
+	/*푸터 높이 조절*/
+	footer{margin-top: 300px;}
+</style>
+</head>
+<body>
+	<c:import url="../common/menubar.jsp"/>
+	<h1 align="center" style="margin-top: 110px; font-family: 'Gugi';">QnA ></h1>
+		<table id="qnaTable">
+				<th></th>
+				<th></th>
+				<th></th>
+				<tr>
+
+					<th>&nbsp제목&nbsp&nbsp <input type="text" id="text" name="bTitle"  value="${board.bTitle}" style="width: 87%;"></th>
+
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<th>&nbsp작성자&nbsp&nbsp<input type="text" id="writer" name="mId" readonly="readonly" value="${ board.mId }" style="background: lightgrey;"></th>
+				</tr>
+				<tr>
+			<tr>
+				<div id="fileArea">
+					<th>&nbsp첨부파일&nbsp&nbsp
+						<a href="${ contextPath }/resources/buploadFiles/${ attachment.saveName }" download="${ attachment.originName }" style="color: black;">${ attachment.originName }</a>
+					</th>
+				</div>
+				<br>
+			</tr>
+			<tr>
+			<th colspan="3">
+				<div id="titleImgArea" style="width: 100%; height: 100%;">
+					<c:if test="${ !empty attachment.saveName }">
+					<img id="titleImg" width="100%" height="100%" src="${ contextPath }/resources/buploadFiles/${ attachment.saveName }">
+					</c:if>
+					<img id="titleImg" width="100%" height="100%">
+				</div>
+			</th>
+			</tr>
+			<tr>
+				<th>
+					<textarea id="content_text" name="bContents" style="font-family: ' Gugi;" readonly="readonly">${board.bContents}</textarea>
+				</th>
+			</tr>
+			
+
+				<!-- 관리자만 답변 가능-->
+				<c:if test="${ loginUser.memberId eq 'admin' }">
+				<input type="hidden" id="admin" name="mId" value='${loginUser.memberId}'>
+
+<!-- 			<table class="replyTable"> -->
+				<tr>
+					<th>
+					<textarea rows="5" cols="84" id="rContent" name="cContents"></textarea>
+					<button type="button" class="btn3" id="rSubmit">등록하기</button>
+					
+					</th>
+					
+				</tr>
+
+				</c:if>
+				<!-- 작성자만 볼 수 있음-->
+				<c:if test="${ loginUser.memberId eq board.mId || loginUser.memberId eq 'admin'}">
+
+				<tr>
+					<td id="commentTd">&nbsp답변<br>
+					<textarea rows="5" cols="111" id="cContents" style="font-family: ' Gugi;" readonly="readonly">${comment.cContents}</textarea>
+					</td>
+				</tr>
+
+				</c:if>
+<!-- 			</table> -->
+			
+					
+				<c:url var="qupView" value="qupView.no">
+					<c:param name="bNo" value="${board.bNo}"/>
+					<c:param name="page" value="${page}"/>
+				</c:url>
+				<c:url var="qdelete" value="qdelete.no">
+					<c:param name="bNo" value="${board.bNo}"/>
+				</c:url>
+				<c:url var="qlist" value="qlist.no">
+					<c:param name="page" value="${page}"/>
+				</c:url>
+				
+
+			<c:if test="${ loginUser.memberId eq board.mId || loginUser.memberId eq 'admin' }">
+
+			<tr style="border: none;">
+				<td colspan="2" align="center" style="border: none;">
+						<button class="btn1" onclick="location.href='${ qupView }'" style="position: absolute;">수정하기</button>
+						<button class="btn2" onclick="qDelete();">삭제하기</button>
+				</td style="border: none;"> 
+			</tr style="border: none;">
+
+			</c:if>
+
+		</table> 
+	  
+   
+         <c:import url="../common/footer.jsp"/>
+	 <script type="text/javascript" >
+	 	// 내용 작성 부분의 공간을 클릭할 때 파일 첨부 창이 뜨도록 설정하는 함수
+				$(function(){
+						$("#fileArea").hide(); 
+								
+						$("#titleImgArea").click(function(){
+							$("#thumbnailImg1").click();
+						});
+					});
+						
+				// 각각의 영역에 파일을 첨부 했을 경우 미리 보기가 가능하도록 하는 함수
+				function LoadImg(value, num){
+					if(value.files && value.files[0]){
+						var reader = new FileReader();
+								
+						reader.onload = function(e){								
+							switch(num){
+							case 1: 
+								$("#titleImg").attr("src", e.target.result);
+								break;
+							}
+						}
+								
+						reader.readAsDataURL(value.files[0]);
+					}
+				}
+				
+		$('#rSubmit').on('click', function(){
+			var cContents = $('#rContent').val();
+
+			var bNo = ${board.bNo};
+			var mId = $('#admin').val();
+			
+			$.ajax({
+				url: 'addReply.no',
+				data: {cContents:cContents, bNo:bNo, mId:mId},
+				success: function(data){
+					if(data == 'success'){
+						$('#rContent').val('');
+						getCommentList();
+					}
+				}
+			});
+		});
+		
+		function getCommentList() {
+			var bNo = ${board.bNo}
+			
+			$.ajax({
+				url: 'cList.no',
+				data: {bNo:bNo},
+				success: function(data){
+					
+					$cContents = $('#cContents');
+					$cContents.val('');
+					
+					if(data.length > 0){
+						$cContents.val(data[0].cContents);
+					} else {
+						$cContents.val('등록된 답변이 없습니다.');
+					}
+				}
+			});
+		}
+		
+		$(function(){
+			getCommentList();				// 댓글 가져오기
+			setInterval(function(){		// 1초에 한번 반복
+				getCommentList();
+			}, 1000);
+		});
+		
+		// 삭제 여부 물어봐줌
+		function qDelete(){
+      		 var bool = confirm('정말 삭제하시겠습니까?');   
+	         if(bool){
+	        	 location.href= '${ qdelete }';
+	         }
+		}
+	</script>  
+</body>
+</html>
