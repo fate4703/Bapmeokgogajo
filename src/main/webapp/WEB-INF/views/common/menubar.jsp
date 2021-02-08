@@ -11,9 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
-<script src="<%= request.getContextPath() %>/resources/js/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <title></title>
 <script src="https://kit.fontawesome.com/7293f5b137.js" crossorigin="anonymous"></script>
 <style>
@@ -156,40 +154,31 @@
 </head>
 <body>
 
- <c:set var="contextPath" value="${ pageContext.servletContext.contextPath }" scope="application"/> 
+	<c:set var="contextPath" value="${ pageContext.servletContext.contextPath }" scope="application"/> 
 	
-   <div class="loginArea" align="right">
-   <!-- 로그인  안한상태 -->
+	<div class="loginArea" align="right">
+	<!-- 로그인  안한상태 -->
+	<nav class="navbar" id="gnb">
+		<span class="navbar_logo">
+			<img id="logo" src="resources/images/logo.png" href="home.do">
+			<a href="home.do">밥먹고 가조</a>
+			<span class="searchbar">
+				<input class="search_input" type="text" id="searchInput" name="searchContents" placeholder="Search...">
+				<a href="#" class="search_icon"><i onclick="search();" class="fas fa-search"></i></a>
+			</span>
+		</span>  
 	<c:if test="${ empty sessionScope.loginUser }">
-		<nav class="navbar" id="gnb">
-			<span class="navbar_logo">
-				<img id="logo" src="resources/images/logo.png" href="home.do">
-				<a href="home.do">밥먹고 가조</a>
-					<span class="searchbar">
-          				 <input class="search_input" type="text" id="searchInput" name="searchContents" placeholder="Search...">
-         				 <a href="#" class="search_icon"><i onclick="search();" class="fas fa-search"></i></a>
-       				 </span>
-			</span>  
 			<ul class="navbar_icons" >
 				<li class="menu" onclick="shop();"><a href="#">About</a></li>
 			     <li class="menu" onclick="location.href='loginView.me'" ><a href="#">Login</a></li> 
 			     <li class="menu" onclick="location.href='enrollForm.me'" ><a href="#">Join</a></li> 
 			</ul>
-		</nav>
+		
 	</c:if>
 
 
 	<!-- 로그인 성공 -->
 	<c:if test="${ !empty sessionScope.loginUser }">
-		<nav class="navbar" id="gnb">
-			<span class="navbar_logo">
-				<img id="logo" src="resources/images/logo.png" href="home.do">
-				<a href="home.do">밥먹고 가조</a>
-					<span class="searchbar">
-          				 <input class="search_input" type="text" id="searchInput" name="searchContents" placeholder="Search...">
-         				 <a href="#" class="search_icon"><i onclick="search();" class="fas fa-search"></i></a>
-       				 </span>
-			</span> 
 			<ul class="navbar_icons" >
 				<li class="menu" onclick="shop();"><a href="#">About</a></li>
 				<li class="menu" onclick="location.href='logoutView.me'" ><a href="#">Logout</a></li> 
@@ -204,8 +193,9 @@
 				 	<li class="menu" onclick="manager();" ><a href="#">M</a></li> 
 				 </c:if>
 			</ul>
-		</nav>
 	</c:if>
+	</nav>
+	
 	</div>
 
 	<script>
