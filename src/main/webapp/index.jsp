@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>밥먹고가조에 오신걸 환영합니다</title>
 <script src="<%= request.getContextPath() %>/resources/js/jquery-3.5.1.min.js"></script>
 </head>
 <body>

@@ -160,8 +160,7 @@
 	<!-- 로그인  안한상태 -->
 	<nav class="navbar" id="gnb">
 		<span class="navbar_logo">
-			<img id="logo" src="resources/images/logo.png" href="home.do">
-			<a href="home.do">밥먹고 가조</a>
+			<a href="home.do"><img id="logo" src="resources/images/logo.png"> 밥먹고 가조</a>
 			<span class="searchbar">
 				<input class="search_input" type="text" id="searchInput" name="searchContents" placeholder="Search...">
 				<a href="#" class="search_icon"><i onclick="search();" class="fas fa-search"></i></a>
