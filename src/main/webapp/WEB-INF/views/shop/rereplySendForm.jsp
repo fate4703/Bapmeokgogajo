@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>답글 등록</title>
-<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Gugi&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/7293f5b137.js" crossorigin="anonymous"></script>
+<link href="//fonts.googleapis.com/css2?family=Dosis:wght@700&family=Gugi&display=swap" rel="stylesheet">
+<script src="//kit.fontawesome.com/7293f5b137.js" crossorigin="anonymous"></script>
 <style>
 #boby{
    font-family: 'Gugi';

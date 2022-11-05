@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="//fonts.gstatic.com">
 <link
-	href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Gugi&display=swap"
+	href="//fonts.googleapis.com/css2?family=Dosis:wght@700&family=Gugi&display=swap"
 	rel="stylesheet">
 <title>밥먹고가조 공지사항 수정</title>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <style>
 /*테이블관련*/
 table {

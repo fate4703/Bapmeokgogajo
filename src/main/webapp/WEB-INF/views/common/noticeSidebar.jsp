@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="//fonts.gstatic.com">
 <link
-   href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Gugi&display=swap"
+   href="//fonts.googleapis.com/css2?family=Dosis:wght@700&family=Gugi&display=swap"
    rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="//fonts.gstatic.com">
 <title></title>
 <style>
 /*  */

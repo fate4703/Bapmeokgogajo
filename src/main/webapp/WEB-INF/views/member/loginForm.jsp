@@ -11,29 +11,29 @@
 <title>로그인</title>
 <!-- 부트 스트랩 -->
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+	href="//cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
 	crossorigin="anonymous">
 <script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+	src="//cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
 	crossorigin="anonymous"></script>
 <script
-	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+	src="//cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
 	integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
 	crossorigin="anonymous"></script>
 <script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+	src="//cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
 	integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
 	crossorigin="anonymous"></script>
 <!-- jQuery -->
 <script src="${ contextPath }/js/jquery-3.5.1.min.js"></script>
 <!-- 폰트 -->
-<script src="https://kit.fontawesome.com/7293f5b137.js" crossorigin="anonymous"></script>
-<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="//kit.fontawesome.com/7293f5b137.js" crossorigin="anonymous"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <!-- 구글 api -->	
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="//apis.google.com/js/platform.js" async defer></script>
 <!-- <meta name="google-signin-client_id" content="1057917963809-pudrp1s95ujocaosdl1kj0tv5h91pptn.apps.googleusercontent.com"> -->
 
 <style type="text/css"> 
@@ -142,7 +142,7 @@
 			<!-- <a id="kakao-login-btn" onclick="location.href='kakaoLogin.me'" class="snsBtn"></a><p> 
 			<a href="javascript:kakaoLogin();"  ><img  src="resources/images/kakao.png" style="height:60px; width: auto;"></a> -->
 		<!-- 	<input type="button" value="카카오톡 로그아웃" onclick="ktout()"> -->
-			<!-- <a href="https://developers.kakao.com/logout">로그아웃</a> -->
+			<!-- <a href="//developers.kakao.com/logout">로그아웃</a> -->
 			
 			<!-- <a href="kakaoLogin.jsp" class="snsBtn"><img class="snsBtn" src="resources/images/kakao.png"></a> -->
 		  </table>
@@ -151,7 +151,7 @@
 	
 	<jsp:include page="../common/footer.jsp"/>
 	
-	<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+	<script src="//apis.google.com/js/platform.js?onload=init" async defer></script>
 	<script type='text/javascript'>
 		
 		

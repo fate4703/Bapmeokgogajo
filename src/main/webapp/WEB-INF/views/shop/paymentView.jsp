@@ -6,12 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>예약결제</title>
-<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Gugi&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/7293f5b137.js" crossorigin="anonymous"></script>
+<link href="//fonts.googleapis.com/css2?family=Dosis:wght@700&family=Gugi&display=swap" rel="stylesheet">
+<script src="//kit.fontawesome.com/7293f5b137.js" crossorigin="anonymous"></script>
 <!-- jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.12.4.min.js" ></script>
 <!-- iamport.payment.js -->
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script type="text/javascript" src="//cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <style>
 	.image{
 		width:300px;
